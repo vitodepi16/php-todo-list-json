@@ -2,7 +2,7 @@ const { createApp } = Vue;
 createApp({
   data() {
     return {
-      title: "to do List",
+      title: "Lista di cose da fare",
       todoList: [],
       apiUrl: "server.php",
       todoItem: "",
@@ -29,6 +29,12 @@ createApp({
           this.todoList = res.data;
           this.todoItem = "";
         });
+    },
+    deleteItem(index) {
+      this.todoList.splice(index, 1);
+    },
+    completedAction(index) {
+      this.todoList[index].done = !this.todoList[index].done;
     },
   },
   mounted() {
