@@ -22,10 +22,11 @@ createApp({
       };
       axios
         .post(this.apiUrl, data, {
-          Headers: { "Content-Type": "multipart/ form-data" },
+          headers: { "Content-Type": "multipart/form-data" },
         })
         .then((res) => {
           console.log(res);
+          this.todoList = res.data;
           this.todoItem = "";
         });
     },

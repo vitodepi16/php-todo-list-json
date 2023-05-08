@@ -20,12 +20,12 @@
 <body>
     <div id="app">
         <h1>{{title}}</h1>
-        <ul>
-            <li v-for="(todo,index) in todoList">{{todo}}</li>
-        </ul>
+
+        <p v-for="(todo,index) in todoList">{{todo}}</p>
+
         <div class="container">
             <div class="row">
-                <div class="col-12">
+                <div class="col-lg-12">
                     <div class="input-group">
                         <input @keyup.enter="updateList" type="text" v-model="todoItem" class="form-control" name="" id="">
                         <button class="btn btn-primary" id="button-add" @click="updateList">Inserisci </button>
